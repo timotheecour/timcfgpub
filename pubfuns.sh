@@ -10,6 +10,7 @@ d_install_opencv(){
     cd ~/git_clone/opencv/
     mkdir build
     cd build
+    # 40s
     time cmake -D CMAKE_BUILD_TYPE=RELEASE \
         -D CMAKE_INSTALL_PREFIX=/usr/local \
         -D INSTALL_C_EXAMPLES=ON \
@@ -17,5 +18,7 @@ d_install_opencv(){
         -D OPENCV_GENERATE_PKGCONFIG=ON \
         -D OPENCV_EXTRA_MODULES_PATH=~/git_clone/opencv_contrib/modules \
         -D BUILD_EXAMPLES=ON ..
+    time make -j$(nproc)
+    time sudo make install
   )
 }
