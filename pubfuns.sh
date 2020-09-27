@@ -7,7 +7,9 @@ d_version(){
 d_install_opencv(){
   (
     set -e
-    cd ~/git_clone/opencv/build/
+    cd ~/git_clone/opencv/
+    mkdir build
+    cd build
     time cmake -D CMAKE_BUILD_TYPE=RELEASE \
         -D CMAKE_INSTALL_PREFIX=/usr/local \
         -D INSTALL_C_EXAMPLES=ON \
