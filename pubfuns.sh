@@ -1,5 +1,9 @@
 set -u
 
+d_version(){
+  echo "v0.1"
+}
+
 d_install_opencv(){
   cd ~/git_clone/opencv/build/
   time cmake -D CMAKE_BUILD_TYPE=RELEASE \
